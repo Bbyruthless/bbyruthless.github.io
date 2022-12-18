@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+
+:root {
+    --highlightColour: #223344;
+    --bgColour: #000000;
+    --accentColour: #FFF;
+    --font: 'Karla', sans-serif;
+    --delay: .3s;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: var(--font);
+    background: var(--bgColour);
+    opacity: 0;
+    animation: 1s ease-out var(--delay) 1 transitionAnimation;
+    animation-fill-mode: forwards;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+#profilePicture, #profilePicture img {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    display: block;
+    margin: 40px auto 20px;
+    border-radius: 50%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#userName {
+    color: var(--accentColour);
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.25;
+    display: block;
+    font-family: var(--font);
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+#links {
+    max-width: 675px;
+    width: auto;
+    display: block;
+    margin: 27px auto;
+}
+
+.link {
+    position: relative;
+    background-color: var(--highlightColour);
+    color: var(--accentColour);
+    border: solid var(--accentColour) 2px;
+    border-radius: 10px;
+    font-size: 1rem;
+    text-align: center;
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px; /* 17px */
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+    .link:hover {
+        background-color: var(--accentColour);
+        color: var(--highlightColour);
+    }
+}
+
+.link:active {
+    background-color: var(--accentColour);
+    color: var(--highlightColour);
+}
+
+/*-------------------------animations-----------------------*/
+@keyframes transitionAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes animate {
+    0% {
+      background-position: -500%;
+    }
+    100% {
+      background-position: 500%;
+    }
+}
+
+@keyframes animStar {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-2000px);
+    }
+}
+
+/*-------------------------popup------------------------*/
+/* credits: https://www.youtube.com/watch?v=lAS2glU0xlc */
+.overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+    transition: .5s ease-in-out;
+}
+
+.popup {
+    position: relative;
+    top: -43%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 350px;
+    width: auto;
+    height: auto;
+    margin: 56px;
+    background-color: var(--accentColour);
+    transform: scale(0);
+    transition: .5s ease-in-out;
+}
+
+.popup-quote {
+    font-family : Baskerville, Georgia, serif;
+    font-style : italic;
+    position: flex;
+    color: var(--accentColour);
+    padding: 12px;
+    background-color: var(--highlightColour);
+    text-align: center;
+    font-size: 1rem;
+}
+
+.popup-photo {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.popup-photo img {
+    width: 100%;
+    height: 100%;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.overlay:target .popup {
+    transform: scale(1);
+    top: 0;
+}
+
+.popup-close {
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.7rem;
+    font-weight: 400;
+    border-radius: 100%;
+    background-color: var(--highlightColour);
+    z-index: 4;
+    color: var(--accentColour);
+    line-height: 2.7rem;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+    .popup-close:hover {
+        background-color: var(--accentColour);
+        color: var(--highlightColour);
+    }
+}
+
+.popup-close:active {
+    background-color: var(--accentColour);
+    color: var(--highlightColour);
+}
