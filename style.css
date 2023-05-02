@@ -66,20 +66,29 @@ body {
 }
 
 .link {
-    position: relative;
     background-color: var(--highlightColour);
     color: var(--accentColour);
     border: solid var(--highlightColour) 2px;
     border-radius: 10px;
     font-size: 1rem;
     text-align: center;
-    display: block;
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 15px;
     padding: 12px;
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
+    display: grid;
+    grid-template-columns: 0.9fr 1fr;
+    grid-column-gap: 20px;
+}
+
+.link__icon {
+    justify-self: end;
+}
+
+.link__text {
+    justify-self: start;
 }
 
 @media (hover: hover) {
