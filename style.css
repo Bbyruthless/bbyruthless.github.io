@@ -79,16 +79,7 @@ body {
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
     display: grid;
-    grid-template-columns: 0.9fr 1fr;
-    grid-column-gap: 20px;
-}
-
-.link__icon {
-    justify-self: end;
-}
-
-.link__text {
-    justify-self: start;
+    grid-template-columns: auto 1fr auto;
 }
 
 @media (hover: hover) {
