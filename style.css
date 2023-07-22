@@ -8,6 +8,12 @@
     --delay: .3s;
 }
 
+table { empty-cells: show; }
+
+input:read-only {
+    cursor: pointer;
+}
+
 /* video background */
 #background-video {
     height: 100vh;
@@ -80,6 +86,23 @@ body {
     -webkit-tap-highlight-color: transparent;
     display: grid;
     grid-template-columns: auto 1fr auto;
+}
+
+.panel {
+    background-color: var(--highlightColour);
+    color: var(--accentColour);
+    border: solid var(--highlightColour) 2px;
+    border-radius: 10px;
+    font-size: 1rem;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    padding: 12px;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 @media (hover: hover) {
