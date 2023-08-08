@@ -29,7 +29,9 @@ body {
   overflow-x: hidden;
   word-wrap: break-word;
   background-color: #E2BDFF;
-  background-image: url("assets/images/bg.jpeg");
+  background-image: url("assets/images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 body:before {
