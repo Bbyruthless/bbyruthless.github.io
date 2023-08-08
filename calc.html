@@ -1,328 +1,386 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Buying Calc</title>
-    <!-- Favicon -->
-    <link
-      rel="icon"
-      href="assets/images/profile_picture.png"
-      type="image/x-icon"
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light only" />
+    <meta name="description" content="-" />
+    <meta property="og:site_name" content="bbyruthless" />
+    <meta property="og:title" content="Bbyruthless" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="-" />
+    <meta
+      property="og:image"
+      content="https://bbyruthless.com/assets/images/pfp.png"
     />
-    <!-- Font Awesome icons -->
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="800" />
+    <meta property="og:url" content="https://www.bbyruthless.com" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://www.bbyruthless.com" />
     <link
+      href="https://fonts.googleapis.com/css2?display=swap&family=Sriracha:ital,wght@0,400;1,400&family=Source+Sans+Pro:ital,wght@0,200;0,400;1,200;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700"
       rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v6.2.1/css/all.css"
+      type="text/css"
     />
-    <!-- CSS -->
+    <link rel="icon" href="assets/images/pfp.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      * {
+        font-family: "Space Mono", monospace;
+      }
+
+      .content {
+        width: 100%;
+      }
+
+      h1 {
+        font-family: "Sriracha", cursive;
+      }
+
+      h1,
+      h2 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+      }
+
+      table {
+        empty-cells: show;
+        width: 100%;
+        text-align: center;
+      }
+
+      .content > .content {
+        background-color: #ebdbfb;
+        border-radius: var(--border-radius-tl) var(--border-radius-tr)
+          var(--border-radius-br) var(--border-radius-bl);
+        padding: 0.5rem 1rem;
+      }
+
+      .checkbox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+    <noscript>
+      <style>
+        body {
+          overflow: auto !important;
+        }
+
+        body:after {
+          display: none !important;
+        }
+
+        #wrapper > .content {
+          opacity: 1 !important;
+        }
+
+        #wrapper {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+          filter: none !important;
+        }
+      </style>
+    </noscript>
   </head>
 
-  <body>
-    <video
-      id="background-video"
-      autoplay
-      loop
-      muted
-      poster="assets/images/background.png"
-    >
-      <source src="assets/videos/background_loop.mp4" type="video/mp4" />
-    </video>
-    <div id="profilePicture">
-      <img src="assets/images/profile_picture.png" alt="Profile Picture" />
-    </div>
-
-    <div id="userName">Buying calc</div>
-
-    <!-- Add a placeholder for the Twitch embed -->
-    <div id="twitch-embed" class="hidden"></div>
-
-    <div id="links">
-      <div class="panel" style="background-color: white">
-        <div class="panel">
-          <h1>Gold</h1>
-          <table>
-            <thead>
-              <tr>
-                <th>
-                  <p>Item</p>
-                </th>
-                <th>
-                  <p>Quantity</p>
-                </th>
-                <th>
-                  <p>Price per</p>
-                </th>
-                <th>
-                  <p>Item total</p>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <p>Nuggets</p>
-                </td>
-                <td>
-                  <input id="q_nugget" type="number" min="0" value="0" />
-                </td>
-                <td>
-                  <input id="p_nugget" type="number" min="0" value="200" />
-                </td>
-                <td>
-                  <input id="t_nugget" type="number" value="0" readonly />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>Dust</p>
-                </td>
-                <td>
-                  <input id="q_dust" type="number" min="0" value="0" />
-                </td>
-                <td>
-                  <input id="p_dust" type="number" min="0" value="10" />
-                </td>
-                <td>
-                  <input id="t_dust" type="number" value="0" readonly />
-                </td>
-              </tr>
-              <tr>
-                <td colspan="2"></td>
-                <td>
-                  <h3>Gold total</h3>
-                </td>
-                <td>
-                  <input id="g_total" type="number" value="0" readonly />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="panel">
-          <h1>Materials</h1>
-          <div
-            style="display: flex; align-items: center; justify-content: center"
-          >
-            <sup style="padding-right: 0.6rem">Same price for each mat</sup
-            ><input id="is_same" type="checkbox" checked />
+  <body class="is-loading">
+    <div id="container">
+      <div id="wrapper" style="width: 44rem">
+        <div class="content" style="width: 100%">
+          <div class="content">
+            <h1>Gold</h1>
+            <table>
+              <thead>
+                <tr>
+                  <th>
+                    <p>Item</p>
+                  </th>
+                  <th>
+                    <p>Quantity</p>
+                  </th>
+                  <th>
+                    <p>Price per</p>
+                  </th>
+                  <th>
+                    <p>Item total</p>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <p>Nuggets</p>
+                  </td>
+                  <td>
+                    <input id="q_nugget" type="number" min="0" value="0" />
+                  </td>
+                  <td>
+                    <input id="p_nugget" type="number" min="0" value="200" />
+                  </td>
+                  <td>
+                    <input id="t_nugget" type="number" value="0" readonly />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Dust</p>
+                  </td>
+                  <td>
+                    <input id="q_dust" type="number" min="0" value="0" />
+                  </td>
+                  <td>
+                    <input id="p_dust" type="number" min="0" value="10" />
+                  </td>
+                  <td>
+                    <input id="t_dust" type="number" value="0" readonly />
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2"></td>
+                  <td>
+                    <h3>Gold total</h3>
+                  </td>
+                  <td>
+                    <input id="g_total" type="number" value="0" readonly />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          <table id="same">
-            <thead>
-              <tr>
-                <th>
-                  <p>Quantity</p>
-                </th>
-                <th>
-                  <p>Price per</p>
-                </th>
-                <th>
-                  <p>Item total</p>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <input id="q_mat" type="number" min="0" value="0" />
-                </td>
-                <td>
-                  <input id="p_mat" type="number" min="0" value="0" />
-                </td>
-                <td>
-                  <input id="t_mat" type="number" value="0" readonly />
-                </td>
-              </tr>
+          <div class="content">
+            <h1>Materials</h1>
+            <div class="checkbox">
+              <sup>Same price for each mat</sup
+              ><input id="is_same" type="checkbox" checked />
+            </div>
+            <table id="same">
+              <thead>
+                <tr>
+                  <th>
+                    <p>Quantity</p>
+                  </th>
+                  <th>
+                    <p>Price per</p>
+                  </th>
+                  <th>
+                    <p>Item total</p>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <input id="q_mat" type="number" min="0" value="0" />
+                  </td>
+                  <td>
+                    <input id="p_mat" type="number" min="0" value="0" />
+                  </td>
+                  <td>
+                    <input id="t_mat" type="number" value="0" readonly />
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <h3>Materials total</h3>
+                  </td>
+                  <td>
+                    <input id="same_total" type="number" value="0" readonly />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table id="individual" style="display: none">
+              <thead>
+                <tr>
+                  <th>
+                    <p>Type</p>
+                  </th>
+                  <th>
+                    <p>Quantity</p>
+                  </th>
+                  <th>
+                    <p>Price per</p>
+                  </th>
+                  <th>
+                    <p>Total</p>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <p>Aluminium</p>
+                  </td>
+                  <td>
+                    <input id="q_alu" type="number" min="0" value="0" />
+                  </td>
+                  <td>
+                    <input id="p_alu" type="number" min="0" value="0" />
+                  </td>
+                  <td>
+                    <input id="t_alu" type="number" value="0" readonly />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Copper</p>
+                  </td>
+                  <td>
+                    <input id="q_cop" type="number" min="0" value="0" />
+                  </td>
+                  <td>
+                    <input id="p_cop" type="number" min="0" value="0" />
+                  </td>
+                  <td>
+                    <input id="t_cop" type="number" value="0" readonly />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Electronics</p>
+                  </td>
+                  <td>
+                    <input id="q_ele" type="number" min="0" value="0" />
+                  </td>
+                  <td>
+                    <input id="p_ele" type="number" min="0" value="0" />
+                  </td>
+                  <td>
+                    <input id="t_ele" type="number" value="0" readonly />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Glass</p>
+                  </td>
+                  <td>
+                    <input id="q_gla" type="number" min="0" value="0" />
+                  </td>
+                  <td>
+                    <input id="p_gla" type="number" min="0" value="0" />
+                  </td>
+                  <td>
+                    <input id="t_gla" type="number" value="0" readonly />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Plastic</p>
+                  </td>
+                  <td>
+                    <input id="q_pla" type="number" min="0" value="0" />
+                  </td>
+                  <td>
+                    <input id="p_pla" type="number" min="0" value="0" />
+                  </td>
+                  <td>
+                    <input id="t_pla" type="number" value="0" readonly />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Rubber</p>
+                  </td>
+                  <td>
+                    <input id="q_rub" type="number" min="0" value="0" />
+                  </td>
+                  <td>
+                    <input id="p_rub" type="number" min="0" value="0" />
+                  </td>
+                  <td>
+                    <input id="t_rub" type="number" value="0" readonly />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Scrap</p>
+                  </td>
+                  <td>
+                    <input id="q_scr" type="number" min="0" value="0" />
+                  </td>
+                  <td>
+                    <input id="p_scr" type="number" min="0" value="0" />
+                  </td>
+                  <td>
+                    <input id="t_scr" type="number" value="0" readonly />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Steel</p>
+                  </td>
+                  <td>
+                    <input id="q_ste" type="number" min="0" value="0" />
+                  </td>
+                  <td>
+                    <input id="p_ste" type="number" min="0" value="0" />
+                  </td>
+                  <td>
+                    <input id="t_ste" type="number" value="0" readonly />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>Wood</p>
+                  </td>
+                  <td>
+                    <input id="q_woo" type="number" min="0" value="0" />
+                  </td>
+                  <td>
+                    <input id="p_woo" type="number" min="0" value="0" />
+                  </td>
+                  <td>
+                    <input id="t_woo" type="number" value="0" readonly />
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2"></td>
+                  <td>
+                    <h3>Materials total</h3>
+                  </td>
+                  <td>
+                    <input
+                      id="individual_total"
+                      type="number"
+                      value="0"
+                      readonly
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="content">
+            <table>
               <tr>
                 <td></td>
                 <td>
-                  <h3>Materials total</h3>
+                  <h2>Grand total</h2>
                 </td>
                 <td>
-                  <input id="same_total" type="number" value="0" readonly />
+                  <input id="grand_total" type="number" value="0" readonly />
                 </td>
               </tr>
-            </tbody>
-          </table>
-          <table id="individual" style="display: none">
-            <thead>
-              <tr>
-                <th>
-                  <p>Type</p>
-                </th>
-                <th>
-                  <p>Quantity</p>
-                </th>
-                <th>
-                  <p>Price per</p>
-                </th>
-                <th>
-                  <p>Total</p>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <p>Aluminium</p>
-                </td>
-                <td>
-                  <input id="q_alu" type="number" min="0" value="0" />
-                </td>
-                <td>
-                  <input id="p_alu" type="number" min="0" value="0" />
-                </td>
-                <td>
-                  <input id="t_alu" type="number" value="0" readonly />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>Copper</p>
-                </td>
-                <td>
-                  <input id="q_cop" type="number" min="0" value="0" />
-                </td>
-                <td>
-                  <input id="p_cop" type="number" min="0" value="0" />
-                </td>
-                <td>
-                  <input id="t_cop" type="number" value="0" readonly />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>Electronics</p>
-                </td>
-                <td>
-                  <input id="q_ele" type="number" min="0" value="0" />
-                </td>
-                <td>
-                  <input id="p_ele" type="number" min="0" value="0" />
-                </td>
-                <td>
-                  <input id="t_ele" type="number" value="0" readonly />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>Glass</p>
-                </td>
-                <td>
-                  <input id="q_gla" type="number" min="0" value="0" />
-                </td>
-                <td>
-                  <input id="p_gla" type="number" min="0" value="0" />
-                </td>
-                <td>
-                  <input id="t_gla" type="number" value="0" readonly />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>Plastic</p>
-                </td>
-                <td>
-                  <input id="q_pla" type="number" min="0" value="0" />
-                </td>
-                <td>
-                  <input id="p_pla" type="number" min="0" value="0" />
-                </td>
-                <td>
-                  <input id="t_pla" type="number" value="0" readonly />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>Rubber</p>
-                </td>
-                <td>
-                  <input id="q_rub" type="number" min="0" value="0" />
-                </td>
-                <td>
-                  <input id="p_rub" type="number" min="0" value="0" />
-                </td>
-                <td>
-                  <input id="t_rub" type="number" value="0" readonly />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>Scrap</p>
-                </td>
-                <td>
-                  <input id="q_scr" type="number" min="0" value="0" />
-                </td>
-                <td>
-                  <input id="p_scr" type="number" min="0" value="0" />
-                </td>
-                <td>
-                  <input id="t_scr" type="number" value="0" readonly />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>Steel</p>
-                </td>
-                <td>
-                  <input id="q_ste" type="number" min="0" value="0" />
-                </td>
-                <td>
-                  <input id="p_ste" type="number" min="0" value="0" />
-                </td>
-                <td>
-                  <input id="t_ste" type="number" value="0" readonly />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>Wood</p>
-                </td>
-                <td>
-                  <input id="q_woo" type="number" min="0" value="0" />
-                </td>
-                <td>
-                  <input id="p_woo" type="number" min="0" value="0" />
-                </td>
-                <td>
-                  <input id="t_woo" type="number" value="0" readonly />
-                </td>
-              </tr>
-              <tr>
-                <td colspan="2"></td>
-                <td>
-                  <h3>Materials total</h3>
-                </td>
-                <td>
-                  <input
-                    id="individual_total"
-                    type="number"
-                    value="0"
-                    readonly
-                  />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="panel">
-          <table>
-            <tr>
-              <td></td>
-              <td>
-                <h2>Grand total</h2>
-              </td>
-              <td>
-                <input id="grand_total" type="number" value="0" readonly />
-              </td>
-            </tr>
-          </table>
+            </table>
+          </div>
         </div>
       </div>
     </div>
     <script src="https://unpkg.com/localstorage-slim@2.4.0/dist/localstorage-slim.js"></script>
     <script src="./assets/js/localStorage.js"></script>
     <script src="./assets/js/calc.js"></script>
+    <script src="./assets/js/index.js"></script>
   </body>
 </html>
