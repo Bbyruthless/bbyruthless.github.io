@@ -52,7 +52,13 @@
 
   <body class="is-loading">
     <div id="container">
-      <div id="wrapper">
+      <!-- Add a placeholder for the Twitch embed -->
+      <div id="twitch-content" class="wrapper hidden">
+        <div class="content">
+          <div id="twitch-embed"></div>
+        </div>
+      </div>
+      <div class="wrapper">
         <div class="content">
           <div class="image">
             <span
@@ -147,11 +153,11 @@
             </li>
           </ul>
         </div>
-        <!-- <div class="content">
-
-        </div> -->
       </div>
     </div>
     <script src="./assets/js/index.js"></script>
+    <!-- Load the Twitch embed script -->
+    <script src="https://player.twitch.tv/js/embed/v1.js"></script>
+    <script src="./assets/js/twitch.js"></script>
   </body>
 </html>
