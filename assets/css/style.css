@@ -102,7 +102,7 @@ a {
   -webkit-overflow-scrolling: touch;
   align-items: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   min-height: var(--viewport-height);
   overflow: hidden;
@@ -546,6 +546,10 @@ input:read-only {
 #twitch-embed {
   text-align: center;
   transition: all 1s linear;
+}
+
+#twitch-content {
+  margin-left: 1rem;
 }
 
 .hidden {
