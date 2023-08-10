@@ -1,7 +1,7 @@
 var player = new Twitch.Player('twitch-embed', {
-    width: 400,
-    height: 300,
     channel: 'zerkaa',
+    width: 400,
+    height: 225,
     parent: [
         'github.io',
         'bbyruthless.com'

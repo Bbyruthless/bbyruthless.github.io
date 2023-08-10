@@ -560,6 +560,10 @@ input:read-only {
   opacity: 0;
 }
 
+p.sub-heading > strong:first-child {
+  margin-right: 0.5rem;
+}
+
 @media (max-width: 1920px) {
 }
 
