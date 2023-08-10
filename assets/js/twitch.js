@@ -1,5 +1,5 @@
 var player = new Twitch.Player('twitch-embed', {
-    channel: 'zerkaa',
+    channel: 'bbyruthless',
     width: 400,
     height: 225,
     parent: [
