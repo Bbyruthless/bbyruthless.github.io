@@ -46,124 +46,15 @@
           transition: none !important;
           filter: none !important;
         }
+
       </style>
     </noscript>
   </head>
 
   <body class="is-loading">
     <div id="container">
-      <div class="wrapper">
-        <div class="content">
-          <div class="image">
-            <span
-              class="frame"
-              style="
-                background-image: none;
-                background-size: 100% 100%;
-                background-position: left top;
-                background-repeat: no-repeat;
-              "
-              ><img
-                src="assets/images/pfp.png"
-                data-src="done"
-                alt=""
-                style="opacity: 1"
-            /></span>
-          </div>
-          <!-- START: VTuber award promo -->
-          <div class="list">
-            <p>
-              <em>Ruthless</em> has been nominated for the Rising Star award at
-              the inaugrual VTuber awards
-            </p>
-            <hr />
-            <p>
-              She's up against huge names and need <strong>YOUR</strong> help to
-              stand a chance. So spread the word, vote for her and she has a
-              fighting chance to win!
-            </p>
-            <hr />
-            <a href="https://thevtuberawards.com/vote" target="_blank"
-              >Vote here!</a
-            >
-          </div>
-          <!-- END: VTuber award promo -->
-          <h1 class="heading">About Me</h1>
-          <div class="list">
-            <p>
-              Bbyruthless aka <em>Ruthless</em> is a variety streamer and VTuber
-              who has been consistently & full-time streaming since Summer 2022.
-              She portrays the character Saint Gomez on the GTA RP server
-              NoPixel WL. As well as GTA V, she is also known for
-              <em>Just Chatting</em> streams and playing other variety games,
-              which never fail to entertain.
-            </p>
-            <hr />
-            <p>
-              When tuning in to one of Ruthless streams you will immediately
-              notice her focus on creating a safe and welcoming environment for
-              all & maintaining positive vibes at all times in her community.
-              Utilising her contagious energy and witty humour, these values are
-              always reflected onto her content.
-            </p>
-          </div>
-          <p class="sub-heading">
-            <strong>
-              <a href="./credits.html">Credits</a>
-            </strong>
-            <strong>
-              <a href="./links.html">Links</a>
-            </strong>
-          </p>
-          <hr class="divider" />
-          <ul class="icons">
-            <li>
-              <a href="/" aria-label="Homepage">
-                <img class="svg-icon" src="./assets/svgs/home.svg" />
-                <span class="label">Home</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.twitch.tv/bbyruthless"
-                aria-label="Twitch"
-                target="_blank"
-              >
-                <img class="svg-icon" src="./assets/svgs/twitch.svg" />
-                <span class="label">Twitch</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://twitter.com/intent/user?screen_name=bbyruthless"
-                aria-label="Twitter"
-                target="_blank"
-              >
-                <img class="svg-icon" src="./assets/svgs/twitter.svg" />
-                <span class="label">Twitter</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.youtube.com/@bbyruthlessclips?sub_confirmation=1"
-                aria-label="YouTube"
-                target="_blank"
-              >
-                <img class="svg-icon" src="./assets/svgs/youtube.svg" />
-                <span class="label">YouTube Clips</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="mailto:bbyruthlssttv@gmail.com"
-                aria-label="Email"
-                target="_blank"
-              >
-                <img class="svg-icon" src="./assets/svgs/email.svg" />
-                <span class="label">Email</span>
-              </a>
-            </li>
-          </ul>
+      <div class="wrapper" id="wrapper">
+        <div class="content" id="content">
         </div>
       </div>
       <!-- Add a placeholder for the Twitch embed -->
@@ -173,6 +64,422 @@
         </div>
       </div>
     </div>
+
+    <div id="mainPage" style="display:none">
+      <div class="image">
+        <span
+          class="frame"
+          style="
+            background-image: none;
+            background-size: 100% 100%;
+            background-position: left top;
+            background-repeat: no-repeat;
+          "
+          ><img
+            src="assets/images/pfp.png"
+            data-src="done"
+            alt=""
+            style="opacity: 1"
+        /></span>
+      </div>
+      <!-- START: VTuber award promo -->
+      <div class="list">
+        <p>
+          <em>Ruthless</em> has been nominated for the Rising Star award at
+          the inaugrual VTuber awards
+        </p>
+        <hr />
+        <p>
+          She's up against huge names and need <strong>YOUR</strong> help to
+          stand a chance. So spread the word, vote for her and she has a
+          fighting chance to win!
+        </p>
+        <hr />
+        <a href="https://thevtuberawards.com/vote" target="_blank"
+          >Vote here!</a
+        >
+      </div>
+      <!-- END: VTuber award promo -->
+      <h1 class="heading">About Me</h1>
+      <div class="list">
+        <p>
+          Bbyruthless aka <em>Ruthless</em> is a variety streamer and VTuber
+          who has been consistently & full-time streaming since Summer 2022.
+          She portrays the character Saint Gomez on the GTA RP server
+          NoPixel WL. As well as GTA V, she is also known for
+          <em>Just Chatting</em> streams and playing other variety games,
+          which never fail to entertain.
+        </p>
+        <hr />
+        <p>
+          When tuning in to one of Ruthless streams you will immediately
+          notice her focus on creating a safe and welcoming environment for
+          all & maintaining positive vibes at all times in her community.
+          Utilising her contagious energy and witty humour, these values are
+          always reflected onto her content.
+        </p>
+      </div>
+      <p class="sub-heading">
+        <strong>
+          <a onclick="showContent('credits')">Credits</a>
+        </strong>
+        <strong>
+          <a onclick="showContent('links')">Links</a>
+        </strong>
+      </p>
+      <hr class="divider" />
+      <ul class="icons">
+        <li>
+          <a onclick="showContent()" aria-label="Homepage">
+            <img class="svg-icon" src="./assets/svgs/home.svg" />
+            <span class="label">Home</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.twitch.tv/bbyruthless"
+            aria-label="Twitch"
+            target="_blank"
+          >
+            <img class="svg-icon" src="./assets/svgs/twitch.svg" />
+            <span class="label">Twitch</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://twitter.com/intent/user?screen_name=bbyruthless"
+            aria-label="Twitter"
+            target="_blank"
+          >
+            <img class="svg-icon" src="./assets/svgs/twitter.svg" />
+            <span class="label">Twitter</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.youtube.com/@bbyruthlessclips?sub_confirmation=1"
+            aria-label="YouTube"
+            target="_blank"
+          >
+            <img class="svg-icon" src="./assets/svgs/youtube.svg" />
+            <span class="label">YouTube Clips</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="mailto:bbyruthlssttv@gmail.com"
+            aria-label="Email"
+            target="_blank"
+          >
+            <img class="svg-icon" src="./assets/svgs/email.svg" />
+            <span class="label">Email</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="credits" style="display:none">
+      <div class="image">
+        <span
+          class="frame"
+          style="
+            background-image: none;
+            background-size: 100% 100%;
+            background-position: left top;
+            background-repeat: no-repeat;
+          "
+          ><img
+            src="assets/images/pfp.png"
+            data-src="done"
+            alt=""
+            style="opacity: 1"
+        /></span>
+      </div>
+      <h1 class="heading">Credits</h1>
+      <p class="sub-heading"><strong>Stream Asset Credits</strong></p>
+      <div class="list">
+        <ul>
+          <li>
+            <p>
+              Vtuber Model:
+              <a href="https://twitter.com/azuyanii" target="_blank"
+                >Azuyani</a
+              >
+            </p>
+          </li>
+          <li>
+            <p>
+              Panels:
+              <a
+                href="https://www.fiverr.com/nidhmtd?source=gig_page"
+                target="_blank"
+                >Nidhom</a
+              >
+            </p>
+          </li>
+          <li>
+            <p>
+              Just Chatting Overlay:
+              <a
+                href="https://www.fiverr.com/obellie?source=gig_page"
+                target="_blank"
+                >Obellie</a
+              >
+            </p>
+          </li>
+          <li>
+            <p>
+              Emotes:
+              <a
+                href="https://www.fiverr.com/mapinn_?source=gig_page"
+                target="_blank"
+                >Mapinn</a
+              >
+            </p>
+          </li>
+          <li>
+            <p>
+              Cheer Emote:
+              <a
+                href="https://www.fiverr.com/penaali_?source=gig_page"
+                target="_blank"
+                >Penaali</a
+              >
+            </p>
+          </li>
+          <li>
+            <p>
+              Rave & Note Emote:
+              <a
+                href="https://www.fiverr.com/maryglow?source=gig_page"
+                target="_blank"
+                >Maryglow</a
+              >
+            </p>
+          </li>
+          <li>
+            <p>
+              Starting & Ending Screens:
+              <a href="https://bwchiio.myportfolio.com/" target="_blank"
+                >Bwchii</a
+              >
+            </p>
+          </li>
+          <li>
+            <p>
+              Popcat & Blankie Emote:
+              <a href="https://vgen.co/morrigh" target="_blank">Morrigh</a>
+            </p>
+          </li>
+          <li>
+            <p>
+              Hype Alert:
+              <a href="https://vgen.co/EightyEightDesign" target="_blank"
+                >Eighty Eight Designs</a
+              >
+            </p>
+          </li>
+          <li>
+            <p>Website: Siqsaw 🤓</p>
+          </li>
+        </ul>
+      </div>
+      <p class="sub-heading">
+        <strong>
+          <a onclick="showContent()">Back</a>
+        </strong>
+        <strong>
+          <a onclick="showContent('links')">Links</a>
+        </strong>
+      </p>
+      <hr class="divider" />
+      <ul class="icons">
+        <li>
+          <a onclick="showContent()" aria-label="Homepage">
+            <img class="svg-icon" src="./assets/svgs/home.svg" />
+            <span class="label">Home</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.twitch.tv/bbyruthless"
+            aria-label="Twitch"
+            target="_blank"
+          >
+            <img class="svg-icon" src="./assets/svgs/twitch.svg" />
+            <span class="label">Twitch</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://twitter.com/intent/user?screen_name=bbyruthless"
+            aria-label="Twitter"
+            target="_blank"
+          >
+            <img class="svg-icon" src="./assets/svgs/twitter.svg" />
+            <span class="label">Twitter</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.youtube.com/@bbyruthlessclips?sub_confirmation=1"
+            aria-label="YouTube"
+            target="_blank"
+          >
+            <img class="svg-icon" src="./assets/svgs/youtube.svg" />
+            <span class="label">YouTube Clips</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="mailto:bbyruthlssttv@gmail.com"
+            aria-label="Email"
+            target="_blank"
+          >
+            <img class="svg-icon" src="./assets/svgs/email.svg" />
+            <span class="label">Email</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="links" style="display:none">
+      <div class="image">
+        <span
+          class="frame"
+          style="
+            background-image: none;
+            background-size: 100% 100%;
+            background-position: left top;
+            background-repeat: no-repeat;
+          "
+          ><img
+            src="assets/images/pfp.png"
+            data-src="done"
+            alt=""
+            style="opacity: 1"
+        /></span>
+      </div>
+      <h1 class="heading">Links</h1>
+      <div class="list">
+        <ul>
+          <li>
+            <p>
+              <a href="https://gamersupps.gg/ruthless" target="_blank"
+                >Gamersupps</a
+              >
+            </p>
+          </li>
+          <li>
+            <p>
+              <a
+                href="https://throne.me/u/bbyruthless/wishlist"
+                target="_blank"
+                >Throne</a
+              >
+            </p>
+          </li>
+          <li>
+            <p>
+              <a
+                href="https://www.youtube.com/@bbyruthless?sub_confirmation=1"
+                target="_blank"
+                >Main YouTube Channel</a
+              >
+            </p>
+          </li>
+          <li>
+            <p>
+              <a href="https://www.tiktok.com/@_bbyruthless" target="_blank"
+                >TikTok</a
+              >
+            </p>
+          </li>
+          <li>
+            <p>
+              <a
+                href="https://www.instagram.com/bbyruthlss/"
+                target="_blank"
+                >Instagram</a
+              >
+            </p>
+          </li>
+          <li>
+            <p>
+              <a href="https://www.discord.gg/bbyruthless" target="_blank"
+                >Discord</a
+              >
+            </p>
+          </li>
+          <li>
+            <p>
+              <a href="https://kick.com/bbyruthless" target="_blank"
+                >Kick.com</a
+              >
+            </p>
+          </li>
+        </ul>
+      </div>
+      <p class="sub-heading">
+        <strong>
+          <a onclick="showContent()">Back</a>
+        </strong>
+        <strong>
+          <a onclick="showContent('credits')">Credits</a>
+        </strong>
+      </p>
+      <hr class="divider" />
+      <ul class="icons">
+        <li>
+          <a onclick="showContent()" aria-label="Homepage">
+            <img class="svg-icon" src="./assets/svgs/home.svg" />
+            <span class="label">Home</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.twitch.tv/bbyruthless"
+            aria-label="Twitch"
+            target="_blank"
+          >
+            <img class="svg-icon" src="./assets/svgs/twitch.svg" />
+            <span class="label">Twitch</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://twitter.com/intent/user?screen_name=bbyruthless"
+            aria-label="Twitter"
+            target="_blank"
+          >
+            <img class="svg-icon" src="./assets/svgs/twitter.svg" />
+            <span class="label">Twitter</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.youtube.com/@bbyruthlessclips?sub_confirmation=1"
+            aria-label="YouTube"
+            target="_blank"
+          >
+            <img class="svg-icon" src="./assets/svgs/youtube.svg" />
+            <span class="label">YouTube Clips</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="mailto:bbyruthlssttv@gmail.com"
+            aria-label="Email"
+            target="_blank"
+          >
+            <img class="svg-icon" src="./assets/svgs/email.svg" />
+            <span class="label">Email</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
     <script src="./assets/js/index.js"></script>
     <!-- Load the Twitch embed script -->
     <script src="https://player.twitch.tv/js/embed/v1.js"></script>

@@ -458,3 +458,35 @@
     )();
 }
 )();
+
+const mainContent = document.getElementById("mainPage").innerHTML;
+const creditsContent = document.getElementById("credits").innerHTML;
+const linksContent = document.getElementById("links").innerHTML;
+
+function showContent(content) {
+    document.getElementById('wrapper').style.opacity = 0;
+
+    setTimeout(function () {
+        if (content === "credits") {
+            contentElement.innerHTML = creditsContent;
+        } else if (content === "links") {
+            contentElement.innerHTML = linksContent;
+        } else {
+            contentElement.innerHTML = mainContent;
+        }
+
+        document.getElementById('wrapper').style.opacity = 1; 
+    }, 1400);
+}
+
+var contentElement = document.getElementById("content");
+
+var url = window.location.href;
+url = url.split("?").pop();
+if (url === "credits") {
+    contentElement.innerHTML = creditsContent;
+} else if (url === "links") {
+    contentElement.innerHTML = linksContent;
+} else {
+    contentElement.innerHTML = mainContent;
+}
