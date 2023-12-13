@@ -469,10 +469,13 @@ function showContent(content) {
     setTimeout(function () {
         if (content === "credits") {
             contentElement.innerHTML = creditsContent;
+            document.title = "Credits";
         } else if (content === "links") {
             contentElement.innerHTML = linksContent;
+            document.title = "Links";
         } else {
             contentElement.innerHTML = mainContent;
+            document.title = "Home";
         }
 
         document.getElementById('wrapper').style.opacity = 1; 
@@ -485,8 +488,10 @@ var url = window.location.href;
 url = url.split("?").pop();
 if (url === "credits") {
     contentElement.innerHTML = creditsContent;
+    document.title = "Credits";
 } else if (url === "links") {
     contentElement.innerHTML = linksContent;
+    document.title = "Links";
 } else {
     contentElement.innerHTML = mainContent;
 }
