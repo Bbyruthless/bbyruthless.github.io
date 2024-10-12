@@ -4,7 +4,7 @@ var player = new Twitch.Player('twitch-embed', {
     height: 225,
     parent: [
         'github.io',
-        'bbyruthless.com'
+        'rueevt.com'
     ]
 });
 
